@@ -1,0 +1,36 @@
+
+//about UNIONW 
+    UNION operator is used to combine the result-set of two or more SELECT statements.
+37  SELECT gender FROM student UNION SELECT telephone FROM person
+      //To allow duplicate values, use the ALL keyword with UNION
+38  SELECT fname FROM student UNION ALL SELECT Lname FROM person 
+     //SQL statement selects all the different adress (only distinct values) from the "student" and the "person" tables:
+39  SELECT adress FROM student UNION SELECT adress FROM person ORDER BY adress
+      //The SELECT INTO statement selects data from one table and inserts it into a new table
+40  INSERT INTO person
+    SELECT * FROM student;
+   //SELECT INTO  can copy all columns from one table to another, existing table
+41 //CREATE DATABASE statement is used to create a database
+   CREATE DATABASE employee
+42 //SQL constraints are used to specify rules for the data in a table.
+
+43 CREATE TABLE Family ( fam_Id int, LastName varchar(255)NOT NULL, FirstName varchar(255), Address varchar(255), City varchar(255) )
+    //NOT NULL:constraint enforces a column to NOT accept NULL values.
+44 CREATE TABLE park ( p_Id int NOT NULL UNIQUE, LastName varchar(255) NOT NULL, FirstName varchar(255), Address varchar(255), City varchar(255)) 
+     //The UNIQUE constraint uniquely identifies each record in a database table.
+45  CREATE TABLE parent ( p_Id int NOT NULL, LastName varchar(255) NOT NULL, FirstName varchar(255), Address varchar(255), City varchar(255), PRIMARY KEY (P_Id) ) 
+     //The PRIMARY KEY constraint uniquely identifies each record in a database table.
+46 CREATE TABLE zon ( zon_Id int NOT NULL, rigion int NOT NULL, c_id int, PRIMARY KEY (zon_Id), FOREIGN KEY (c_Id) REFERENCES city(c_id)) 
+    //FOREIGN KEY constraint is used to prevent actions that would destroy links between tables.
+47 CREATE TABLE MEKLIT ( M_Id int NOT NULL CHECK (M_I>0), Lname varchar(255) NOT NULL, FirstName varchar(255), Address varchar(255), City varchar(255) )
+    //CHECK constraint is used to limit the value range that can be placed in a column.
+48 CREATE TABLE Defa ( D_Id int NOT NULL, LastName varchar(255) NOT NULL, FirstName varchar(255), Address varchar(255), City varchar(255) DEFAULT 'tam' )
+    //DEFAULT constraint is used to insert a default value into a column.
+49 CREATE INDEX PIndex ON Persons (LastName)
+   // CREATE INDEX statement is used to create indexes in tables.
+50  DROP INDEX Lname ON persons;
+   // DROP INDEX statement is used to delete an index in a table.
+51 CREATE TABLE auto ( ID int NOT NULL AUTO_INCREMENT, LastName varchar(255) NOT NULL, FirstName varchar(255), Address varchar(255), City varchar(255), PRIMARY KEY (ID) ) 
+   //Auto-increment allows a unique number to be generated when a new record is inserted into a table.
+52 CREATE VIEW meklCREATE VIEW meklit AS SELECT adress(s) FROM table_name WHERE condition
+   //a view is a virtual table based on the result-set of an SQL statement.

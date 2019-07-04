@@ -1,0 +1,76 @@
+1 SELECT * FROM student;
+    //used to select all elements of atable student
+2 SELECT fname="Huluye"FROM student 
+     //used to select only same student with out all
+3 SELECT age,gender FROM student 
+     //used to print out only two coloumn age and gender
+4 SELECT DISTINCT country,adress FROM student 
+     //used to select aunique value
+5 SELECT DISTINCT adress FROM student 
+     //used to print out only unique value of astudent adress
+6 SELECT * FROM student WHERE adress='add' 
+     //WHERE clause is used to filter out students value by using adress
+7 SELECT * FROM student WHERE stud_id=005 
+    //used to filter out by id=005
+8 SELECT * FROM student WHERE adress='adet' AND gender='female' 
+     //to print from student table by adress and gender
+9 SELECT * FROM student WHERE adress='add' OR adress='bdr' 
+     //used to print out students by using attribute values
+10 SELECT * FROM student WHERE age='5' AND (gender='male' OR'female') 
+     //use to print out age 5 and either of genders
+11 SELECT * FROM students ORDER BY adress;
+     //is used to an arrangement purpose from either of sides bottom to top or top to bottom
+12 SELECT * FROM student ORDER BY adress DESC;
+    //ORDERD BY is used to print out by using sequence arrangement either of ESC/DISC
+13 SELECT * FROM student ORDER BY Country,lname   
+    //to be ordered by using country and lname
+14 SELECT * FROM student ORDER BY adress ASC, fname DESC
+    //is arranged adressby asc and fname by desc 
+15 INSERT INTO student (stud_id, fname,Lname, Address, country, gender, age)
+    //VALUES ('006','Tom','Erichsen','dove','Skagen','Stavanger','22');
+16 UPDATE student SET fname='Tamiralech', age='28' WHERE adress ='adet' 
+       update is used for replacing and chaning purpose
+17  UPDATE student SET fname='Tamiralech', age='28' WHERE adress ='adet'
+18  DELETE * FROM `student` WHERE fname='Dawit' AND age='5' 
+     //for the purpose of remove or delete arow of information 
+19  SELECT stud_id, fname, adress FROM student WHERE stud_id = 001 or 1=1 
+     //for the injection validation sysytem
+20 ALTER TABLE student ADD password varchar(20)
+     // we use the alter keyword to add or drop column of student table
+21 injection
+  
+22 SELECT * FROM student LIMIT 3 
+     //select top keyword
+23 SELECT * FROM student WHERE age <=age
+24 SELECT * FROM student WHERE adress LIKE 'adet' 
+     //The LIKE operator is used in a WHERE clause to search for a specified pattern in a column.
+25 SELECT * FROM student WHERE adress NOT LIKE '%adet'
+      //Using the NOT keyword allows you to select records that do NOT match the pattern.
+26 SELECT * FROM student WHERE adress NOT LIKE '%adet%'
+     //The following SQL statement selects all student with adress NOT containing the pattern "adet":
+27 SELECT * FROM student WHERE adress LIKE 'wel%' 
+      //A wildcard character can be used to substitute for any other character(s) in a string.
+28 SELECT stud_id FROM student WHERE stud_id BETWEEN 001 AND 005
+      //The BETWEEN operator is used to select values within a range.
+29 SELECT Lname AS Cname FROM student 
+     //SQL Aliases are used to temporarily rename a table or a column heading.
+29 SELECT fname AS Customer, adress AS city FROM student
+30 SELECT lname, Address+', '+country+', '+age+', '+gender AS customer
+      FROM student
+31 SELECT * FROM student WHERE gender LIKE 'fem%' 
+   // wildcard The statement selects all student with a gender starting with "fem":
+32 SELECT * FROM student WHERE Lname LIKE '[yba]%'
+  //Join are used to query data  from two or more tables 
+33 INNERJOIN
+  //SELECT student.stud_id, person.fName, student.adress FROM student INNER JOIN person ON student.stud_id=person.p_id
+34 SELECT student.stud_id, person.fName, student.adress FROM student LEFT JOIN person ON student.stud_id=person.p_id   
+    //LEFT JOIN: Return all rows from the left table, and the matched rows from the right table
+35 SELECT student.stud_id, person.fName, student.adress FROM student RIGHT JOIN person ON student.stud_id=person.p_id 
+     //RIGHT JOIN: Return all rows from the left table, and the matched rows from the right table
+36 SELECT student.stud_id, person.fName, student.adress FROM student FULL JOIN person ON student.stud_id=person.p_id  
+     //FULL JOIN: Return all rows when there is a match in ONE of the table
+
+
+
+
+  
